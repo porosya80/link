@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<h1>Django Image Uploading</h1>
+<ul>
+    {% for link in object_list %}
+
+    <h2> {{ link.text }} </h2>
+
+
+    {% endfor %}
+</ul>
+{% endblock content %}
