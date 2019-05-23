@@ -12,6 +12,10 @@ v = {editable = true,version = "*"}
 [packages]
 django = "*"
 pillow = "*"
+telepot = "*"
+gunicorn = "*"
+psycopg2 = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
