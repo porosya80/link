@@ -1,1 +1,1 @@
-web: gunicorn link.wsgi
+web: gunicorn linkSender.wsgi
