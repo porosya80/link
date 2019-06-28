@@ -8,6 +8,7 @@ pep8 = "*"
 autopep8 = "*"
 pylint-django = "*"
 v = {editable = true,version = "*"}
+black = "*"
 
 [packages]
 django = "*"
@@ -17,6 +18,11 @@ gunicorn = "*"
 psycopg2 = "*"
 django-heroku = "*"
 django-crispy-forms = "*"
+whitenoise = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
