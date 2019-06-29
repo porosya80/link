@@ -75,16 +75,16 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form v-on:submit.prevent="linkArticle()">
+            <form v-on:submit.prevent="updateLink()">
               <div class="modal-body">
                 <div class="form-group">
                   <label for="text">Link</label>
-                  <input type="text" class="form-control" id="article_heading" placeholder="Enter Article Heading"
+                  <input type="text" class="form-control" id="text" placeholder="enter link"
                     v-model="currentLink.text" required="required">
                 </div>
                 <div class="form-group">
-                  <label for="article_body">Article Body</label>
-                  <input type="checkbox" class="form-control" id="article_body" placeholder=""
+                  <label for="sended">Sended</label>
+                  <input type="checkbox" class="form-control" id="send"
                     v-model="currentLink.sended">
                 </div>
               </div>
@@ -158,7 +158,7 @@
           .then((response) => {
             this.loading = false;
             this.currentLink = response.data;
-            this.getLnks();
+            this.getLinks();
           })
           .catch((err) => {
             this.loading = false;
