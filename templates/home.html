@@ -31,6 +31,8 @@
           </tr>
         </tbody>
       </table>
+
+      <button type="button" class="btn btn-primary" v-on:click="sendAll()">Send Links</button>
       <!-- Add Article Modal -->
       <div class="modal fade" id="addLinkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
@@ -79,13 +81,12 @@
               <div class="modal-body">
                 <div class="form-group">
                   <label for="text">Link</label>
-                  <input type="text" class="form-control" id="text" placeholder="enter link"
-                    v-model="currentLink.text" required="required">
+                  <input type="text" class="form-control" id="text" placeholder="enter link" v-model="currentLink.text"
+                    required="required">
                 </div>
                 <div class="form-group">
                   <label for="sended">Sended</label>
-                  <input type="checkbox" class="form-control" id="send"
-                    v-model="currentLink.sended">
+                  <input type="checkbox" class="form-control" id="send" v-model="currentLink.sended">
                 </div>
               </div>
               <div class="modal-footer">
@@ -174,6 +175,18 @@
           })
           .catch((err) => {
             this.loading = true;
+            console.log(err);
+          })
+      },
+      sendAll: function (id) {
+        this.loading = true;
+        this.$http.delete(`/bot/hello/`)
+          .then((response) => {
+            this.loading = false;
+            this.getLinks();
+          })
+          .catch((err) => {
+            this.loading = false;
             console.log(err);
           })
       },
